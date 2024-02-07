@@ -26,6 +26,11 @@ h3 {
 a {
   font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
 }
+
+.soldOut {
+  filter: grayscale(100%);
+}
+
 @media screen and (max-width: 800px) {
   .produktliste {
     font-size: 4cqw;

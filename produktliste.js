@@ -22,6 +22,17 @@ function showProduct(product) {
     copy.querySelector("div").classList.add("soldOut");
   }
 
+  copy.querySelector(".link").setAttribute("href", `produkt.html?id=${product.id}`);
+
+  if (product.discount) {
+    copy.querySelector(".discounted p:last-child").textContent = "-" + product.discount + "%";
+    const discount = product.price * (product.discount / 100);
+    const final = product.price - discount;
+    copy.querySelector(".discounted h4:first-child span").textContent = final;
+  } else {
+    copy.querySelector(".discounted").remove();
+  }
+
   //appende
   document.querySelector(".produkt_container").appendChild(copy);
 }
